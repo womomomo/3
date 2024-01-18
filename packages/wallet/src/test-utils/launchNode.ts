@@ -4,13 +4,13 @@ import { Provider } from '@fuel-ts/providers';
 import { Signer } from '@fuel-ts/signer';
 import type { ChildProcessWithoutNullStreams } from 'child_process';
 import { spawn } from 'child_process';
-import { randomUUID } from 'crypto';
 import { hexlify } from 'ethers';
 import fsSync from 'fs';
 import os from 'os';
 import path from 'path';
 import { getPortPromise } from 'portfinder';
 import treeKill from 'tree-kill';
+import { v4 as uuidv4 } from 'uuid';
 
 import type { WalletUnlocked } from '../wallets';
 
@@ -101,7 +101,7 @@ export const launchNode = async ({
 
     let chainConfigPathToUse = chainConfigPath;
 
-    const tempDirPath = path.join(os.tmpdir(), '.fuels-ts', randomUUID());
+    const tempDirPath = path.join(os.tmpdir(), '.fuels-ts', uuidv4());
 
     if (!chainConfigPath) {
       if (!fsSync.existsSync(tempDirPath)) {
