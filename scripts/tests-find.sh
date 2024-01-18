@@ -9,7 +9,7 @@ if [[ $* == *--all* ]]; then
 elif [[ $* == *--node* ]]; then
   grep -lE "@group\s+node" $FILES
 elif [[ $* == *--browser* ]]; then
-  grep -lE "@group\s+browser" $FILES
+  grep -lE "@group\s+dan" $FILES
 elif [[ $* == *--e2e* ]]; then
   grep -lE "@group\s+e2e" $FILES
 fi

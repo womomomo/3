@@ -12,7 +12,7 @@ const config: UserConfig = {
         Buffer: true,
         global: true,
       },
-      include: ["fs", "crypto", "buffer", "fs"],
+      include: ["fs", "crypto", "buffer", "fs", "path"],
       overrides: {
         fs: "memfs",
       },
